@@ -122,18 +122,21 @@ document.addEventListener("DOMContentLoaded", () => {
     height = canvas.height = window.innerHeight;
   }
 
-  function createParticles(count = 120) {
-    particles = [];
-    for (let i = 0; i < count; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        radius: 1.8 + Math.random() * 1.2,
-      });
-    }
+  function createParticles() {
+  const isMobile = window.innerWidth < 768;
+  const count = isMobile ? 20 : 120; // fewer dots on mobile
+
+  particles = [];
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.6,
+      vy: (Math.random() - 0.5) * 0.6,
+      radius: 1.8 + Math.random() * 1.2,
+    });
   }
+}
 
   function draw() {
     const isDark = document.body.getAttribute("data-theme") === "dark";

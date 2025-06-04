@@ -108,7 +108,7 @@ footer > * {
   max-width: 460px;
   height: auto;
   filter: drop-shadow(0 0 12px rgba(141, 111, 177, 0.8));
-    /* filter: drop-shadow(0 0 12px rgba(222, 195, 255, 0.8)); */
+  filter: drop-shadow(0 0 12px rgba(222, 195, 255, 0.6));
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -117,9 +117,9 @@ footer > * {
   filter: drop-shadow(0 0 20px rgba(187, 134, 252, 1));
 }
 
-body[data-theme="light"] .hero-logo {
+/* body[data-theme="light"] .hero-logo {
   filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.6));
-}
+} */
 
 #slogan {
   font-weight: bold;

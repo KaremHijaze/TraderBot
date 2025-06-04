@@ -429,3 +429,68 @@ body[data-theme="light"] .language-switch-wrapper select {
   background-color: #38a169; /* green */
   color: white;
 }
+
+@media (max-width: 768px) {
+  .funnel-section {
+    margin: 1.2rem auto;          /* keep the outer spacing for gap */
+    padding: 0.8rem 1rem;         /* shrink internal padding */
+    border-radius: 12px;
+  }
+
+  .zigzag,
+  .zigzag.reverse {
+    padding: 0.5rem;
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .zigzag .text {
+    text-align: center;
+    flex: 1 1 100%;
+  }
+
+  .funnel-section .summary,
+  .funnel-section .details {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin: 0.3rem 0;
+  }
+
+  .section-header {
+    gap: 12px;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+  }
+
+  .step-number {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .section-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .logo-container {
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+
+  .hero-logo {
+    max-width: 85%;
+  }
+
+  footer {
+    padding: 20px 10px;
+  }
+}

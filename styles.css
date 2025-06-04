@@ -1,0 +1,390 @@
+/* === GLOBAL THEME VARIABLES === */
+:root,
+body[data-theme="light"] {
+  --pattern-svg: url("data:image/svg+xml,%3Csvg width='1000' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%239999cc' stroke-width='0.4'%3E%3Cpath d='M0 100 L200 200 L400 50 L600 200 L800 100 L1000 200' fill='none'/%3E...%3C/svg%3E");
+  --bg-color: #eaf4fb;
+  --text-color: #123456;
+  --header-bg: #eaf4fb;
+  --section1: #e74c3c;
+  --section2: #3498db;
+  --section3: #eab400;
+  --section4: #304e6d;
+  --section5: #9b59b6;
+  --button-bg: #48bb78;
+}
+
+body[data-theme="dark"] {
+  --pattern-svg: url("data:image/svg+xml,...%3C/svg%3E");
+  --bg-color: #121212;
+  --text-color: #e5e5e5;
+  --header-bg: #121212;
+  --section1: #b63c3c;
+  --section2: #2f88c8;
+  --section3: #d38f0d;
+  --section4: #1b2735;
+  --section5: #7e3fb6;
+  --button-bg: #3182ce;
+}
+
+/* === BASE === */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* === CANVAS BACKGROUND === */
+#network-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* === HEADER / FOOTER === */
+header.network-hero {
+  position: relative;
+  text-align: center;
+  padding: 20px 10px;
+  height: 140px;
+  background-color: var(--header-bg);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 10px 50px rgba(115, 0, 255, 0.3);
+  z-index: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: transparent; 
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 1;
+}
+
+/* Footer CTA Button */
+.cta-button {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 12px 24px;
+  margin-top: 16px;
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #2f855a; /* slightly darker on hover */
+}
+
+header.network-hero > *,
+footer > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* === LOGO & SLOGAN === */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-logo {
+  max-width: 460px;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(141, 111, 177, 0.8));
+    /* filter: drop-shadow(0 0 12px rgba(222, 195, 255, 0.8)); */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-logo:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 20px rgba(187, 134, 252, 1));
+}
+
+body[data-theme="light"] .hero-logo {
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.6));
+}
+
+#slogan {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--text-color);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* === FUNNEL SECTIONS === */
+.funnel-section {
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  color: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.step1 { background: var(--section1); }
+.step2 { background: var(--section2); }
+.step3 { background: var(--section3); }
+.step4 { background: var(--section4); }
+.step5 { background: var(--section5); }
+
+.step-number {
+  font-size: 5rem;           /* ✅ Bigger and more visible */
+  font-weight: bold;
+  opacity: 0.08;             /* ✅ Subtle, almost like a watermark */
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  user-select: none;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1); /* ✅ Subtle border effect */
+}
+
+.zigzag {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.zigzag.reverse {
+  flex-direction: row-reverse;
+}
+
+.zigzag .text {
+  flex: 1 1 60%;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .zigzag,
+  .zigzag.reverse {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .zigzag .text {
+    text-align: center;
+  }
+
+  body[dir="rtl"] .zigzag .text {
+    text-align: center;
+  }
+}
+
+/* === LANGUAGE & THEME TOGGLES === */
+/* Top bar */
+.top-controls {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  direction: ltr;
+  height: 34px;
+  direction: ltr;
+}
+
+/* Language Switch (LEFT) */
+.language-switch-wrapper {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  gap: 8px;
+}
+
+.language-switch-wrapper img.mode-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.language-switch-wrapper select {
+  height: 34px;
+  font-size: 14px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: auto;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Optional dark/light adjustments */
+body[data-theme="dark"] .language-switch-wrapper select {
+  background-color: whitesmoke;
+  color: black;
+  border-color: #555;
+}
+
+body[data-theme="light"] .language-switch-wrapper select {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+
+/* Theme Toggle (RIGHT) */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  direction: ltr;
+}
+
+.theme-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch .slider {
+  background-color: #ccc;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  direction: ltr;
+}
+
+.theme-switch .slider::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.theme-switch input:checked + .slider::before {
+  transform: translateX(30px);
+}
+
+.sun, .moon {
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.theme-switch input:not(:checked) + .slider .moon {
+  opacity: 0;
+}
+.theme-switch input:checked + .slider .sun {
+  opacity: 0;
+}
+.theme-switch input:checked + .slider .moon {
+  opacity: 1;
+}
+
+/* Initially hide summary + details */
+.funnel-section .summary,
+.funnel-section .details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+/* Expanded section */
+.funnel-section.expanded .summary,
+.funnel-section.expanded .details {
+  max-height: 2000px; /* high enough to fit content */
+  opacity: 1;
+}
+
+.funnel-section {
+  cursor: pointer;
+}
+
+/* Default collapsed: show read more */
+.funnel-section::after {
+  content: "Read more...";
+  display: block;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 8px;
+  transition: opacity 0.3s ease;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+/* Hide it when expanded */
+.funnel-section.expanded::after {
+  content: "";
+  opacity: 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 16px;
+}
+
+.step-number {
+  font-size: 5rem;
+  font-weight: bold;
+  opacity: 0.08;
+  line-height: 1;
+  user-select: none;
+  margin: 0;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  flex: 1;
+  text-align: center;
+}
+
+.section-icon {
+  width: 48px;
+  height: 48px;
+  stroke-width: 2;
+  padding: 0;
+  border: none;
+  background: none;
+}
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trader-Bot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  <!-- Full-page animated background canvas -->
+  <canvas id="network-canvas"></canvas>
+
+  <!-- Fixed language and theme controls -->
+  <div class="top-controls">
+  <div class="language-switch-wrapper">
+    <img src="https://icons.iconarchive.com/icons/picol/picol/128/Globe-icon.png" id="globe-icon" class="mode-icon" width="20" height="20" />
+    <select id="language-select">
+      <option value="en" selected>English</option>
+      <option value="ar">العربية</option>
+      <option value="he">עברית</option>
+    </select>
+  </div>
+
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch">
+      <input type="checkbox" id="mode-toggle" />
+      <span class="slider">
+        <img src="https://icons.iconarchive.com/icons/github/octicons/128/moon-24-icon.png" class="mode-icon moon" alt="Dark Mode" />
+        <img src="https://icons.iconarchive.com/icons/github/octicons/128/sun-24-icon.png" class="mode-icon sun" alt="Light Mode" />
+      </span>
+    </label>
+  </div>
+</div>
+
+  <!-- Centered logo -->
+<div class="logo-container">
+  <img src="imgs/name.png" alt="Trader-Bot Logo" class="hero-logo"/>
+  <div id="slogan" class="slogan-text">ADD SLOGAN HERE!!!!</div> <!-- ✅ New slogan element -->
+</div>
+
+  <!-- 🚀 Funnel Steps -->
+ <section class="funnel-section step1">
+  <div class="zigzag">
+    <div class="text">
+      
+      <!-- ✅ Wrap number, title, icon in header container -->
+      <div class="section-header">
+        <span class="step-number">1</span>
+        <h2 class="section-title">User Needs</h2>
+        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="10" cy="8" r="5"/>
+          <path d="M2 21a8 8 0 0 1 10.434-7.62"/>
+          <circle cx="18" cy="18" r="3"/>
+          <path d="m22 22-1.9-1.9"/>
+        </svg>
+      </div>
+      <p class="summary">Full-time traders like Ameer want safer, smarter, time-saving trading tools.</p>
+      <p class="details">Many traders today rely on manual processes that are time-consuming and error-prone. Identifying this need helps shape an AI robot that prioritizes usability, automation, and performance support.</p>
+    </div>
+  </div>
+</section>
+
+
+  <section class="funnel-section step2">
+    <div class="zigzag reverse">
+      <div class="text">
+        <div class="section-header">
+          <span class="step-number">2</span>
+          <h2 class="section-title">Problem Framing</h2>
+          <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+          <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+          <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+          <path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
+          </svg>
+        </div>
+  <p class="summary">
+    How might we automate high-confidence trades only during major market sessions?
+  </p>
+  <p class="details">
+    By framing the problem clearly, we focus on timing and trust — ensuring trades happen only during high-volume sessions, backed by reliable predictions and clear conditions.
+  </p>
+</div>
+</section>
+
+  <section class="funnel-section step3">
+    <div class="zigzag">
+      <div class="text">
+        <div class="section-header">
+        <div class="step-number">3</div>
+        <h2>AI Model Prediction</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-icon lucide-brain">
+          <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+          <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+          <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+          <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+          <path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/>
+          <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+        </svg>
+        </div>
+        <p class="summary">Cloud-hosted ML model predicts price direction, high/low, and confidence score.</p>
+        <p class="details">The heart of the robot is a machine learning model trained on historical data. It uses technical indicators and price action patterns to predict near-future movements, and gives each prediction a confidence score.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="funnel-section step4">
+  <div class="zigzag reverse">
+    <div class="text">
+      <div class="section-header">
+        <span class="step-number">4</span>
+        <h2 class="section-title">Filtering Logic</h2>
+        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg"
+          width="48" height="48" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"/>
+        </svg>
+      </div>
+      <p class="summary">Trades only happen if model confidence & agreement criteria are met.</p>
+      <p class="details">Multiple checks are applied before a trade is executed: confidence thresholds, agreement between models, and predefined pip margins help ensure only the most trustworthy trades are triggered.</p>
+    </div>
+  </div>
+</section>
+
+  <section class="funnel-section step5">
+  <div class="zigzag">
+    <div class="text">
+      <div class="section-header">
+        <span class="step-number">5</span>
+        <h2 class="section-title">Trade Execution</h2>
+        <svg class="section-icon" xmlns="http://www.w3.org/2000/svg"
+          width="48" height="48" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 5v4"/>
+          <rect width="4" height="6" x="7" y="9" rx="1"/>
+          <path d="M9 15v2"/>
+          <path d="M17 3v2"/>
+          <rect width="4" height="8" x="15" y="5" rx="1"/>
+          <path d="M17 13v3"/>
+          <path d="M3 3v16a2 2 0 0 0 2 2h16"/>
+        </svg>
+      </div>
+      <p class="summary">Expert Advisor (EA) places trades in MT5 and logs all decisions transparently.</p>
+      <p class="details">Once approved, trades are placed through MetaTrader. All decisions — including skipped trades — are logged for user review, helping traders build confidence in the system and refine rules if needed.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- 📩 Footer -->
+  <footer>
+    <p id="footer-text">Ready to see it in action?</p>
+    <a href="#demo" class="cta-button" id="cta-button">Request a Demo</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
